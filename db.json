@@ -1,37 +1,39 @@
-[
-  {
-    "id": 4198,
-    "name": "Daevi Pothuvaal",
-    "email": "pothuvaal_daevi@haley-wisoky.org",
-    "gender": "female",
-    "status": "inactive"
-  },
-  {
-    "id": 4196,
-    "name": "Prasanna Malik",
-    "email": "prasanna_malik@reichel.info",
-    "gender": "female",
-    "status": "active"
-  },
-  {
-    "id": 4194,
-    "name": "Bhooshan Kaur",
-    "email": "bhooshan_kaur@nader.io",
-    "gender": "female",
-    "status": "inactive"
-  },
-  {
-    "id": 4193,
-    "name": "Bala Mishra",
-    "email": "mishra_bala@kling.net",
-    "gender": "female",
-    "status": "active"
-  },
-  {
-    "id": 4192,
-    "name": "Damayanti Kocchar",
-    "email": "damayanti_kocchar@hickle.name",
-    "gender": "male",
-    "status": "active"
-  }
-]
+{
+  "users": [
+    {
+      "id": 4198,
+      "name": "Daevi Pothuvaal",
+      "email": "pothuvaal_daevi@haley-wisoky.org",
+      "gender": "female",
+      "status": "inactive"
+    },
+    {
+      "id": 4196,
+      "name": "Prasanna Malik",
+      "email": "prasanna_malik@reichel.info",
+      "gender": "female",
+      "status": "active"
+    },
+    {
+      "id": 4194,
+      "name": "Bhooshan Kaur",
+      "email": "bhooshan_kaur@nader.io",
+      "gender": "female",
+      "status": "inactive"
+    },
+    {
+      "id": 4193,
+      "name": "Bala Mishra",
+      "email": "mishra_bala@kling.net",
+      "gender": "female",
+      "status": "active"
+    },
+    {
+      "id": 4192,
+      "name": "Damayanti Kocchar",
+      "email": "damayanti_kocchar@hickle.name",
+      "gender": "male",
+      "status": "active"
+    }
+  ]
+}
