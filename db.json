@@ -33,40 +33,5 @@
     "email": "damayanti_kocchar@hickle.name",
     "gender": "male",
     "status": "active"
-  },
-  {
-    "id": 4191,
-    "name": "Adhrit Tandon II",
-    "email": "ii_adhrit_tandon@bogan-goyette.biz",
-    "gender": "male",
-    "status": "inactive"
-  },
-  {
-    "id": 4189,
-    "name": "Lalita Trivedi",
-    "email": "lalita_trivedi@spinka-heathcote.name",
-    "gender": "male",
-    "status": "active"
-  },
-  {
-    "id": 4188,
-    "name": "Abhirath Gill",
-    "email": "abhirath_gill@nienow.name",
-    "gender": "male",
-    "status": "active"
-  },
-  {
-    "id": 4187,
-    "name": "Mrs. Akroor Shukla",
-    "email": "mrs_akroor_shukla@robel.co",
-    "gender": "male",
-    "status": "inactive"
-  },
-  {
-    "id": 4186,
-    "name": "Akshainie Nayar",
-    "email": "nayar_akshainie@kessler.biz",
-    "gender": "male",
-    "status": "active"
   }
 ]
