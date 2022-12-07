@@ -1,5 +1,5 @@
 {
-  "users": [
+  "Users": [
     {
       "id": 4198,
       "name": "Daevi Pothuvaal",
@@ -36,7 +36,7 @@
       "status": "active"
     }
   ],
-  "posts": [
+  "Posts": [
     {
       "likes": ["5fa64b162183ce1728ff371d"],
       "_id": "5fa65be82183ce1728ff372d",
@@ -324,7 +324,7 @@
       "__v": 0
     }
   ],
-  "themes": [
+  "Themes": [
     {
       "subscribers": [
         "5fa64a072183ce1728ff3719",
