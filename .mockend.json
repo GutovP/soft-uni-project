@@ -1,5 +1,5 @@
 {
-  "Users": [
+  "Users": {
     {
       "id": 4198,
       "name": "Daevi Pothuvaal",
@@ -35,8 +35,8 @@
       "gender": "male",
       "status": "active"
     }
-  ],
-  "Posts": [
+},
+  "Posts": {
     {
       "likes": ["5fa64b162183ce1728ff371d"],
       "_id": "5fa65be82183ce1728ff372d",
@@ -323,8 +323,8 @@
       "updatedAt": "2020-11-07T07:19:59.994Z",
       "__v": 0
     }
-  ],
-  "Themes": [
+},
+  "Themes": {
     {
       "subscribers": [
         "5fa64a072183ce1728ff3719",
@@ -450,5 +450,5 @@
       "updatedAt": "2020-11-07T07:29:48.451Z",
       "__v": 0
     }
-  ]
+}
 }
