@@ -8,7 +8,7 @@ const baseUrl = environment.baseUrl;
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class ThemesService {
   constructor(private http: HttpClient) {}
 
   loadAllThemes() {

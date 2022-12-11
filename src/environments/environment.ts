@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://my-json-server.typicode.com/GutovP/soft-uni-project',
+  baseUrl: 'http://localhost:3000/api',
 };
 
 /*

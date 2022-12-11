@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+
+import { ThemesService } from '../themes.service';
 
 @Component({
   selector: 'app-themes-list',
@@ -8,12 +9,14 @@ import { ApiService } from '../api.service';
 })
 export class ThemesListComponent implements OnInit {
   themes: any;
-  constructor(private apiService: ApiService) {}
+  constructor(private themesService: ThemesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadThemes();
+  }
 
   loadThemes() {
-    return this.apiService.loadAllThemes().subscribe({
+    return this.themesService.loadAllThemes().subscribe({
       next: (data) => {
         this.themes = data;
       },
