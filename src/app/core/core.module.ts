@@ -12,6 +12,6 @@ import { SpinnerComponent } from './spinner/spinner.component';
     CommonModule, // so we can use ngFor
     RouterModule, // so we can use <router-outlet> and routerLink
   ],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent, SpinnerComponent],
 })
 export class CoreModule {}

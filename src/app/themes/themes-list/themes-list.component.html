@@ -1,10 +1,9 @@
-
-
+<div *ngIf="!themes">Something went wrong</div>
 <div *ngFor="let theme of themes; let i = index" class="theme-container">
   <div class="theme-name-wrapper">
     <div class="theme-name">
       <a href="#" class="normal">
-        <h2>{{theme.themeName}}</h2>
+        <h2>{{i+1}}. {{theme.themeName}}</h2>
       </a>
       <div class="columns">
         <div>

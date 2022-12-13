@@ -23,6 +23,7 @@ export class RecentPostsComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
+        this.posts = err;
       },
     });
   }

@@ -10,6 +10,7 @@ import { ThemesService } from '../themes.service';
 })
 export class ThemesListComponent implements OnInit {
   themes: Theme[] | undefined;
+
   constructor(private themesService: ThemesService) {}
 
   ngOnInit(): void {
@@ -23,7 +24,8 @@ export class ThemesListComponent implements OnInit {
         console.log(data);
       },
       error: (err) => {
-        console.error(err);
+        console.log(err);
+        this.themes = err;
       },
     });
   }
