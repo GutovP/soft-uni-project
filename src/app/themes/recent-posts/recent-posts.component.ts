@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Post } from '../../core/models/post';
 import { ThemesService } from '../themes.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ThemesService } from '../themes.service';
   styleUrls: ['./recent-posts.component.scss'],
 })
 export class RecentPostsComponent implements OnInit {
-  posts: any;
+  posts: Post[] | undefined;
   constructor(private themesService: ThemesService) {}
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class RecentPostsComponent implements OnInit {
         this.posts = data;
       },
       error: (err) => {
-        console.log('Somethings went wrong');
+        console.error(err);
       },
     });
   }

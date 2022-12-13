@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Theme } from '../../core/models/theme';
 import { ThemesService } from '../themes.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ThemesService } from '../themes.service';
   styleUrls: ['./themes-list.component.scss'],
 })
 export class ThemesListComponent implements OnInit {
-  themes: any;
+  themes: Theme[] | undefined;
   constructor(private themesService: ThemesService) {}
 
   ngOnInit(): void {
@@ -19,9 +20,10 @@ export class ThemesListComponent implements OnInit {
     return this.themesService.loadAllThemes().subscribe({
       next: (data) => {
         this.themes = data;
+        console.log(data);
       },
       error: (err) => {
-        console.log(err);
+        console.error(err);
       },
     });
   }

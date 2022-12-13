@@ -8,7 +8,10 @@ import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SpinnerComponent],
-  imports: [CommonModule, RouterModule],
+  imports: [
+    CommonModule, // so we can use ngFor
+    RouterModule, // so we can use <router-outlet> and routerLink
+  ],
   exports: [HeaderComponent, FooterComponent],
 })
 export class CoreModule {}
