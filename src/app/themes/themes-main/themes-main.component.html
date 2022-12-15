@@ -1,8 +1,10 @@
 <div class="container">
+  <ng-container *ngIf="isLoggedIn">
     <main>
       <div class="theme-title">
         <app-themes-list></app-themes-list>
       </div>
     </main>
     <app-recent-posts></app-recent-posts>
-  </div>
+  </ng-container>
+</div>

@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
     this.headerItems = [
       { caption: 'Home', path: 'home', link: ['/home'] },
       { caption: 'Themes', path: 'themes', link: ['/themes'] },
+      { caption: 'New Theme', path: 'new', link: ['/themes/new'] },
     ];
 
     this.unAuthItems = [
