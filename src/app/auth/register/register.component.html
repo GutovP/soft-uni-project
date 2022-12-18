@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="registerForm" class="register">
+    <form [formGroup]="registerForm" class="register" (ngSubmit)="registerHandler()">
 
         <fieldset>
             <h2>Registration Form</h2>
@@ -9,19 +9,24 @@
                 <label for="username"><span><i class="fas fa-user"></i></span></label>
                 <input class="input-error" type="text" formControlName="username" id="username" placeholder="Johny">
             </p>
-            <p class="error">
+            <p *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.errors?.['required']"
+                class="error">
                 Username is required!
             </p>
+            <p *ngIf="registerForm.get('username')?.errors?.['minlength']" class="error">
+                Username must be at least 5 characters!</p>
 
             <!-- email -->
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
                 <input type="email" formControlName="email" id="email" placeholder="john.doe@gmail.com">
             </p>
-            <p class="error">
+
+            <p *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']"
+                class="error">
                 Email is required!
             </p>
-            <p class="error">
+            <p *ngIf="registerForm.get('email')?.errors?.['emailValidator']" class="error">
                 Email is not valid!
             </p>
 
@@ -29,7 +34,8 @@
             <p class="field field-icon">
                 <label for="tel"><span><i class="fas fa-phone"></i></span></label>
                 <select formControlName="prefix" id="select-tel" class="tel">
-                    <option value="00359">+359</option>
+                    <option value="">Choose a country code</option>
+                    <option *ngFor="let pref of prefix">{{pref.dial_code}} - {{pref.name}}</option>
                 </select>
                 <input type="text" formControlName="tel" id="tel" placeholder="885 888 888">
             </p>
@@ -40,10 +46,11 @@
                     <label for="password"><span><i class="fas fa-lock"></i></span></label>
                     <input type="password" formControlName="password" id="password" placeholder="******">
                 </p>
-                <p class="error">
+                <p *ngIf="registerForm.get('pass')?.get('password')?.touched && registerForm.get('pass')?.get('password')?.errors?.['required']"
+                    class="error">
                     Password is required!
                 </p>
-                <p class="error">
+                <p *ngIf="registerForm.get('pass')?.get('password')?.errors?.['minlength']" class="error">
                     Password must be at least 4 characters!
                 </p>
                 <!-- rePassword -->
@@ -51,13 +58,15 @@
                     <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
                     <input type="password" formControlName="rePassword" id="rePassword" placeholder="******">
                 </p>
-                <p class="error">Repeat Password does not match password!</p>
+                <p *ngIf="registerForm.get('pass')?.errors?.['passwordGoupValidator']" class="error">Repeat Password
+                    does not match password!</p>
             </ng-container>
-            <button disabled>Create Account</button>
+
+            <button [disabled]="registerForm.invalid" class="register">Create Account</button>
 
             <p class="text-center">
                 Have an account?
-                <a href="#">Log In</a>
+                <a routerLink="auth/login">Log In</a>
             </p>
 
         </fieldset>

@@ -5,6 +5,7 @@ form.register {
   width: 40%;
   margin: 2em auto 0;
   text-align: center;
+  border: 1px solid black;
 }
 
 .login fieldset,
@@ -72,13 +73,18 @@ form.register {
   cursor: pointer;
 }
 
-.register .tel {
-  padding-right: 0.8em;
+.register {
+  background-color: #78a4cf;
+}
+
+.tel {
+  width: 25%;
+  padding-left: 2%;
 }
 
 .login .field,
 .register .field {
-  //   display: flex;
+  display: flex;
   padding-bottom: 0;
 }
 

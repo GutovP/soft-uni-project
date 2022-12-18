@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ThemesListComponent } from './themes-list/themes-list.component';
 import { RecentPostsComponent } from './recent-posts/recent-posts.component';
@@ -16,6 +17,6 @@ import { ThemeDetailsComponent } from './theme-details/theme-details.component';
     NewThemeComponent,
     ThemeDetailsComponent,
   ],
-  imports: [CommonModule, ThemesRoutingModule],
+  imports: [CommonModule, ThemesRoutingModule, ReactiveFormsModule],
 })
 export class ThemesModule {}

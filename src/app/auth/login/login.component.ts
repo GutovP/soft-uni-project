@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { format } from 'path';
 
+import { emailDomains } from 'src/app/shared/constants';
+import { emailValidator } from 'src/app/shared/validators';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -11,11 +12,16 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, emailValidator(emailDomains)]],
+    password: ['', [Validators.required, Validators.minLength(4)]],
+  });
+
   constructor(
     private router: Router,
     private authService: AuthService,
-    private actuvatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {}
@@ -24,10 +30,9 @@ export class LoginComponent implements OnInit {
     this.authService.user = {
       username: 'John',
     } as any;
-    const returnUrl = this.actuvatedRoute.snapshot.params['/auth/login'];
+    const returnUrl =
+      this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+
     this.router.navigate([returnUrl]);
-  }
-  get f() {
-    return this.loginForm.controls;
   }
 }

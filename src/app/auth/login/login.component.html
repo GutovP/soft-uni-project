@@ -6,30 +6,31 @@
 
             <div>
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input formControlName="emailInput" class="input-error" type="email" name="email" id="email"
+                <input formControlName="email" class="input-error" type="email" id="email"
                     placeholder="john.doe@gmail.com">
             </div>
-            <ng-container *ngIf="f">
-                <p class="error">
-                    Email is required!
-                </p>
-                <p class="error">
-                    Email is not valid!
-                </p>
-            </ng-container>
-            <p>
-                <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="password" id="password" placeholder="******">
+
+            <p *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']" class="error">
+                Email is required!
+            </p>
+            <p *ngIf="loginForm.get('email')?.errors?.['emailValidator']" class="error">
+                Email is not valid!
             </p>
 
-            <p class="error">
+            <p>
+                <label for="password"><span><i class="fas fa-lock"></i></span></label>
+                <input type="password" formControlName="password" id="password" placeholder="******">
+            </p>
+
+            <p *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+                class="error">
                 Password is required!
             </p>
-            <p class="error">
+            <p *ngIf="loginForm.get('password')?.errors?.['minlength']" class="error">
                 Password must be at least 4 characters!
             </p>
 
-            <button disabled class="login">Login</button>
+            <button [disabled]="loginForm.invalid" class="login">Login</button>
 
             <p class="text-center">
                 Have an account?
